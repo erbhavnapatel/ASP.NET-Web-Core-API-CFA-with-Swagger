@@ -1,0 +1,16 @@
+Code First Approach
+1. Create Entities
+2. Create DBContext
+3. Add Migration
+4. Create Models
+5. Add Migration
+6. Add DBContext in Startup
+
+Dependency Injection
+7. Create Repositories and Interfaces
+8. Inject services in Startup
+9. Create Controllers
+10.Call Services in Controllers
+
+Swagger
+11.Add Swashbuckle

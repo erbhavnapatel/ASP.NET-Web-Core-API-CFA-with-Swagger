@@ -55,6 +55,18 @@ namespace Customer_Supplier_Authentication.Controllers
             }
         }
 
+        // PUT api/<CustomerController>/5
+        [HttpPut("{productId}")]
+        public async Task<IActionResult> PutFaculty(int productId, [FromBody] ProductModel productModel)
+        {
+            if (productId != productModel.Id)
+            {
+                return BadRequest();
+            }
+            await _productRepository.UpdateProduct(productModel);
+            return Ok();
+        }
+
         // DELETE api/<SupplierController>/5
         [HttpDelete("{productId}")]
         public async Task<ActionResult<Product>> DeleteProduct(int productId)

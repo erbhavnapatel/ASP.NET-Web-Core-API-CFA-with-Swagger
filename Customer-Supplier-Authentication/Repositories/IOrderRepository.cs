@@ -11,6 +11,7 @@ namespace Customer_Supplier_Authentication.Repositories
     {
         public Task<Order> FindOrderById(int orderId);
         public Task<List<OrderModel>> GetOrders();
+        public Task AddOrder(OrderModel orderModel);
         public Task<Order> DeleteOrder(int orderId);
     }
 }

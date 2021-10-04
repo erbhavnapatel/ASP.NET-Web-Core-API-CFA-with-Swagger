@@ -46,6 +46,13 @@ namespace Customer_Supplier_Authentication.Controllers
             }
         }
 
+        // POST api/<CustomerController>
+        [HttpPost]
+        public async Task PostOrder([FromBody] OrderModel orderModel)
+        {
+            await _orderRepository.AddOrder(orderModel);
+        }
+
         // DELETE api/<CustomerController>/5
         [HttpDelete("{orderId}")]
         public async Task<ActionResult<Order>> DeleteOrder(int orderId)

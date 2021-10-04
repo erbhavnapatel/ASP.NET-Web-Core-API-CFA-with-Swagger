@@ -60,5 +60,20 @@ namespace Customer_Supplier_Authentication.Repositories
             }
             return products;
         }
+
+        public async Task UpdateProduct(ProductModel productModel)
+        {
+            var newProduct = new Product()
+            {
+                ProductName = productModel.ProductName,
+                SupplierId = productModel.SupplierId,
+                UnitPrice = productModel.UnitPrice,
+                Package = productModel.Package,
+                IsDiscontinued = productModel.IsDiscontinued
+            };
+
+            _context.Product.Update(newProduct);
+            await _context.SaveChangesAsync();
+        }
     }
 }
